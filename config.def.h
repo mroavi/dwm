@@ -50,6 +50,8 @@ static const Rule rules[] = {
 	{ NULL,            "crx_fdaklkkpfdfonopeakobbnidhpebknjc", NULL, SPTAG(1), 1, -1 },
 	{ "sppavucontrol", "pavucontrol",                          NULL, SPTAG(2), 1, -1 },
   { "Arandr",        "arandr",                               NULL, SPTAG(3), 1, -1 },
+  { "Soffice", "soffice", NULL,           0,        0,         0 },
+  { "Soffice", "soffice", "Presenting: ", 0,        0,         1 },
 };
 
 /* layout(s) */
