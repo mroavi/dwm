@@ -32,14 +32,16 @@ typedef struct {
 	const void *cmd;
 } Sp;
 const char *spcmd1[] = {"alacritty", "--class", "spterm", "-o", "window.dimensions.columns=133", "window.dimensions.lines=40", NULL };
-const char *spcmd2[] = {"brave", "--class=crx_cadlkienfkclaiaibeoongdcgmdikeeg", "--app-id=cadlkienfkclaiaibeoongdcgmdikeeg", NULL };
-const char *spcmd3[] = {"pavucontrol", "--class=sppavucontrol", NULL };
+//const char *spcmd2[] = {"brave", "--class=crx_cadlkienfkclaiaibeoongdcgmdikeeg", "--app-id=cadlkienfkclaiaibeoongdcgmdikeeg", NULL };
+const char *spcmd2[] = {"brave", "--class=crx_mgcnhkmpdpnediagdealdkcalejhlhle", "--app-id=mgcnhkmpdpnediagdealdkcalejhlhle", NULL };
+const char *spcmd3[] = {"brave", "--class=crx_hnpfjngllnobngcgfapefoaidbinmjnm", "--app-id=hnpfjngllnobngcgfapefoaidbinmjnm", NULL };
 const char *spcmd4[] = {"arandr", NULL };
 static Sp scratchpads[] = {
 	/* name																		cmd  */
 	{"spterm",																spcmd1},
-	{"crx_cadlkienfkclaiaibeoongdcgmdikeeg",	spcmd2},
-	{"sppavucontrol",													spcmd3},
+	{"crx_mgcnhkmpdpnediagdealdkcalejhlhle",	spcmd2},  // deepseek
+  //{"crx_cadlkienfkclaiaibeoongdcgmdikeeg",	spcmd2}, // ChatGPT
+	{"crx_hnpfjngllnobngcgfapefoaidbinmjnm",	spcmd3},
 	{"Arandr",																spcmd4},
 };
 
@@ -54,8 +56,9 @@ static const Rule rules[] = {
 	{ "Gimp",          NULL,                                   NULL, 0,        1, -1 },
 	{ "Firefox",       NULL,                                   NULL, 1 << 8,   0, -1 },
 	{ NULL,            "spterm",                               NULL, SPTAG(0), 1, -1 },
-	{ NULL,            "crx_cadlkienfkclaiaibeoongdcgmdikeeg", NULL, SPTAG(1), 1, -1 },
-	{ "sppavucontrol", "pavucontrol",                          NULL, SPTAG(2), 1, -1 },
+	//{ NULL,            "crx_cadlkienfkclaiaibeoongdcgmdikeeg", NULL, SPTAG(1), 1, -1 },
+  { NULL,            "crx_mgcnhkmpdpnediagdealdkcalejhlhle", NULL, SPTAG(1), 1, -1 },
+	{ NULL,            "crx_hnpfjngllnobngcgfapefoaidbinmjnm", NULL, SPTAG(2), 1, -1 },
   { "Arandr",        "arandr",                               NULL, SPTAG(3), 1, -1 },
   { "Soffice", "soffice", NULL,           0,        0,         0 },
   { "Soffice", "soffice", "Presenting: ", 0,        0,         1 },
@@ -120,7 +123,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_bracketleft,       view_adjacent,  { .i = -1 } },
 	{ MODKEY,                       XK_semicolon, togglescratch,  {.ui = 0 } },
 	{ MODKEY,                       XK_c,      togglescratch,  {.ui = 1 } },
-	{ MODKEY,                       XK_p,      togglescratch,  {.ui = 2 } },
+	{ MODKEY,                       XK_w,      togglescratch,  {.ui = 2 } },
   { MODKEY,                       XK_a,      togglescratch,  {.ui = 3 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
